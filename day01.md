@@ -272,3 +272,80 @@ System.out.printf();**
 항1 ? 항2 : 항3
 =, +=, -=, *=, /=, %=, ...
 ```
+<br> 
+
+---
+<br>
+
+> **Math.random();**
+> 
+
+: 난수를 추출해주는 메서드, 0.0 <= ? <1.0
+
+> 자바의 산술 이항 연산
+> 
+
+(1) int타입보다 작은 타입(char, short, byte)은 int타입으로 변환되어 연산 수행
+
+(2) 두 항의 타입이 다를 때는 값이 손실되지 않는 범위내에서 하나의 타입으로 일치시켜서 연산 수행
+
+⚠️ 주의
+
+```java
+char + char ---> int
+short + short ---> int
+byte + byte ---> int
+char + long ---> long
+int + long ---> long
+**long + float ---> float      //float가 더 크다**
+double + float ---> double
+
+(예외 : boolean타입)
+```
+
+<aside>
+💡 l-value = r-value
+l-value > r-value       ⇒ 자동형변환
+l-value < r-value       ⇒ 강제형변환(연산자를 이용해서), l-value = (l-value의 타입)r-value
+
+</aside>
+
+<br>
+
+---
+<br>
+                  
+
+> 증감 연산자
+> 
+- ++(1증가), —(1감소)
+- 단항 연산자(전위형-앞, 후위형-뒤)
+- 리터럴(값)은 항으로 사용 불가, 변수에 사용가능
+- ++num, num++, —num, num—
+
+```java
+//같은 의미
+++num;
+num++;
+
+//다른 의미
+int result1 = ++num;   //먼저
+int result2 = num++;   //나중에
+
+System.out.println(num);      //100
+System.out.println(++num);    //101 증가하고 전달
+System.out.println(num++);    //100 전달하고 증가 => 101
+
+```
+<br>
+
+---
+<br>
+
+> 조건 연산자(3항 연산자)
+> 
+
+```java
+**조건식(연산 결과가 boolean타입인식) ? 참일때 수행할 식 : 거짓일때 수행할 식**
+
+```
