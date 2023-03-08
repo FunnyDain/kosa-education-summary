@@ -240,9 +240,93 @@ System.out.printf();**
 그래서 int를 char로 바꾸고 싶다면 강제형변환해줘야함
 
 </aside>
+<br>
+
+> 문자열 타입변환
+> 
+
+| 변환타입 | 사용 예 |
+| --- | --- |
+| String → byte | String str = “10”
+byte value = Byte.parseByte(str); |
+| String → short | String str = “200”
+short value = Short.parseShort(str); |
+| String → int | String str = “300000”
+int value = Integer.parseInt(str); |
+| String → long | String str = “40000000000”
+long value = Long.parseLong(str); |
+| String → float | String str = “12.345”
+float value = Float.parseFloat(str); |
+| String → double | String str = “12.345”
+double value = Double.parseDouble(str); |
+| String → boolean | String str = “true”
+boolean value = Boolean.parseBoolean(str); |
+| 기본타입 → String  | String str = String.valueOf(기본타입값)                                                                                       |
+<br>
+
+---
+<br>
+
+## 콘솔로 변수값 출력
+
+: println(내용), print(내용), prinf(”형식문자열”, 값1, 값2, …”);
+
+> printf() 형식문자열
+> 
+
+```java
+prinf("형식문자열", 값1, 값2, …);
+
+// 값1, 값2, ... : 형식 문자열에 제공될 값
+
+int value = 123;
+
+```
+
+| 형식화된 문자열 | 설명 |
+| --- | --- |
+| %d, 
+%6d,
+-6%, 
+%06 | 정수(10진수), 
+6자리정수로 왼쪽 공백, 
+6자리정수로 오른쪽 공백, 
+6자리 정수로 왼쪽 공백 0채움 |
+| %o
+%x | 정수(8진수)
+정수(16진수) |
+| %10.2f | 실수/ 정수7자리+소수점,왼쪽빈자리공백 |
+| %c | 문자형 |
+| %s | 문자열 |
+| \t | 탭 |
+| \n | 줄바꿈 |
+| %% | % |
+
+```java
+package day3;
+public class PrintfTest {
+	public static void main(String[] args) {
+		System.out.printf("테스트입니당%n");	
+		System.out.printf("테스트%d입니당\n",10);		
+		System.out.printf("테스트입니당%n");
+		System.out.printf("%d %x %o %c\n", 100, 100, 100, 100);
+		System.out.printf("%d %1$x %1$o %1$c\n", 100);			//1$ : 100을 똑같이 줌
+		System.out.printf("0x%X 0x%x\n",(int)'가',(int)'각');		//%X : 대문자, %x: 소문자, (int)안주면 error : 정수형에 특화됐기에
+		System.out.printf("%c %c %c %c\n", '가', 'A', '!', '3');
+		System.out.printf("%b\n", true);	//%b : boolean
+		System.out.printf("%f %e\n", 100.0, 100.0);
+		System.out.printf("%.2f\n", 123.5678);		//기본적으로 반올림이 적용된다.
+		System.out.printf("|%s|\n", "자바");
+		System.out.printf("|%10s|\n", "자바");		//| : 파이프 기호, 오른쪽 정렬, 10글자
+		System.out.printf("|%-10s|\n", "자바");		//왼쪽 정렬, 10글자
+		System.out.printf("%,d원\n", 1000000);		//1000단위마다 ,	
+	}
+}
+```
 
 <br>
 <br>
+
 
 # 03. 자바의 연산자
 <br>

@@ -131,6 +131,13 @@ else
     
 
 - foreach문
+    
+    ```java
+    //java 5등장
+    for(변수선언 : 배열 or 컬렉션객체)
+    	배열이나 컬렉션 객체가 가지고 있는 데이터 값들에 대한 반복수행문장
+    
+    ```
 
 ⚠️ 논리연산자와 비트연산자
 
@@ -147,3 +154,97 @@ else
 8 | 7 --> 00001000 & 00000111 --> 00001111
 true & true
 ```
+<br>
+
+---
+<br>
+
+## while문
+
+```java
+while(조건식){
+	if(조건식)
+		break;
+	반복수행문장
+}
+수행문장 
+```
+
+<br>
+
+---
+<br>
+
+## 분기제어문
+
+> **break문**
+> 
+- for문, while문, do-while문을 실행 중지하거나 
+조건문인 switch문을 종료할 때 사용
+    
+    💯 중첩된 반복문에서 바깥쪽 반복문까지 종료시키려면, 
+    바깥쪽 반복문에 이름(레이블)을 붙이고 ‘break 이름;’을 사용
+    
+    ```java
+    package day3;
+    
+    public class BreakOutterExample {
+    
+    	public static void main(String[] args) {
+    
+    		Outter : for(char upper='A'; upper<='Z'; upper++) {
+    			for(char lower='a'; lower<='z'; lower++) {
+    				System.out.println(upper + "-" + lower);
+    				if(lower == 'g') {
+    					break Outter;
+    				}
+    			}
+    		}
+    		System.out.println("프로그램 실행 종료");
+    	}
+    
+    }
+    
+    ```
+    
+
+> **continue문**
+> 
+- 반복문인 for문, while문, do-while문에서만 사용
+- continue뒤에 수행문장은 실행되지 않고,
+for문의 증감식 or while문, do-while문이 조건식으로 바로 이동
+
+<aside>
+💡 반복문을 종료하지 않고 계속 수행한다는 점이 break문과 다르다.
+
+</aside>
+
+```java
+package day3;
+
+public class ContinueExample {
+
+	public static void main(String[] args) {
+		for (int i = 1; i <= 10; i++) {
+			if(i%2 != 0) {
+				continue;
+				//홀수는 실행되지 않는다.
+			}
+			System.out.print(i + " ");
+		}
+	}
+
+}
+```
+
+💯 가변 argument
+
+int exprSum(int… p)
+
+---
+
+## 자바의 api
+
+- System.out : 표준출력장치(screen)
+- System.in : 표준입력장치(키보드)
+    - .nextInt() : 숫자 입력
