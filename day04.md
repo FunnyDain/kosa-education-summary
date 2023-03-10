@@ -239,3 +239,42 @@ xxx.java   --- javac --->  xxx.class  --- java --->
     - bin - .class(실행파일)
 - JVM(Java Virtual Machine)가 OS운영체제 위로 올라감, 운영체제마다 다름(jdk다르게 설치하는 이유)
 - java : 바이너리 코드로 실행되는 명령어
+
+<br>
+
+---
+<br>
+
+## 열거(Enum)타입
+
+- 데이터 중 몇가지 한정되는 값
+    
+    ```java
+    ex) 요일 월~일 => 7개
+        계절 봄~겨울 => 4가지
+    ```
+    
+
+```java
+Week.java
+
+public enum Week{
+	
+	//열거 상수 목록
+	MONDAY,
+	TUESDAY,
+	WEDNESDAY,
+	THURSDAY,
+	FRIDAY,
+	SATURDAY,
+	SUNDAY
+}
+
+//관례적으로 알파벳, 대문자, _로 연결
+
+//열거 타입 변수에 열거 상수 대입
+Week today = Week.SUNDAY;
+
+//열거 상수 비교는 ==, != 연산자 사용
+tody == Week.SUNDAY;   //결과: true\
+```
